@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_move;
     private EditText et_test;
     private String str;
+    ImageView test;
 
 
     @Override
@@ -31,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,SubActivity.class);//클릭하면 인텐트 생성. this->sub로
                 intent.putExtra("str",str); //name를 본인이 입력하는게 아님, 입력받은값을 가지고 감
                 startActivity(intent);//액티비티 이동
+            }
+        });
+        test=(ImageView) findViewById(R.id.test);
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"lsy",Toast.LENGTH_SHORT).show();
             }
         });
 
